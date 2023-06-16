@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CumSlider from "./slider/CumSlider";
 import Customersays from "./WhatCustomerSays/Customersays";
 import HomeBanner from "./HomeBanner";
+import { Link } from "react-router-dom";
+import { url } from "../Auth";
 const Home = () => {
   return (
     <>
       <HomeBanner />
-      <div
-        className="section-base-container"
-        data-section-id="id_7c9a10a3-8c9e-562a-b390-cfac6e3ff054"
-      >
+      <div className="section-base-container">
         <div className="section-overlap-container"></div>
         <div
           id="id_7c9a10a3-8c9e-562a-b390-cfac6e3ff054"
@@ -22,14 +21,7 @@ const Home = () => {
                 <div className="row">
                   <div className="col-sm-12 stacked alias-blade_home">
                     <div className="componentWith__container blade__container ">
-                      <div
-                        className="ple-column--stack ple-module-container blade_home__container--inner blade__container--inner"
-                        data-component-name="blade_home"
-                        data-component-alias="blade_home"
-                        data-widget-alias="SMB__Blade__Widgets__BladeSettings___blade_home"
-                        data-widget-id-base="BladeSettings-SMB__Blade__Widgets__BladeSettings___blade_home"
-                        data-component-prop-componentWith="12"
-                      >
+                      <div className="ple-column--stack ple-module-container blade_home__container--inner blade__container--inner">
                         <div className="blade-a blade-a--12 blade-a__text--swapped ">
                           <div className="blade-a__wrap justify-content-end">
                             <div className="row align-items-center">
@@ -38,7 +30,7 @@ const Home = () => {
                                   <img
                                     loading="lazy"
                                     style={{ width: "100%" }}
-                                    src="https://cdcssl.ibsrv.net/ibimg/smb/1000x750_80/webmgr/1n/7/p/images/64065ab2d5fbd_TropeaChiropractic3160027.jpg.webp"
+                                    src={`${url}/img/64065ab2d5fbd_TropeaChiropractic3160027.jpg.webp`}
                                     alt="Consultation"
                                     title="Consultation"
                                   />
@@ -83,15 +75,15 @@ const Home = () => {
                                 </div>
                                 <div className="row blade-a__links">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="meet-the-doctor.html"
+                                      to="meet-the-doctor"
                                     >
                                       Meet the Doctor
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
-                              </div>{" "}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -100,14 +92,7 @@ const Home = () => {
                   </div>
                   <div className="col-sm-12 stacked alias-featuredblocks_home">
                     <div className="componentWith__container featuredblocks__container ">
-                      <div
-                        className="ple-column--stack ple-module-container featuredblocks_home__container--inner featuredblocks__container--inner"
-                        data-component-name="featuredblocks_home"
-                        data-component-alias="featuredblocks_home"
-                        data-widget-alias="SMB__Featuredblocks__Widgets__FeaturedblocksSettings___featuredblocks_home"
-                        data-widget-id-base="FeaturedblocksSettings-SMB__Featuredblocks__Widgets__FeaturedblocksSettings___featuredblocks_home"
-                        data-component-prop-componentWith="12"
-                      >
+                      <div className="ple-column--stack ple-module-container featuredblocks_home__container--inner featuredblocks__container--inner">
                         <div className="featuredblocks component ">
                           <div className="featuredblocks-flyup-a ">
                             <div className="featuredblocks__container">
@@ -117,15 +102,12 @@ const Home = () => {
                               >
                                 <li className="featuredblock__item col-sm-12 col-lg">
                                   <div className="featuredblock__wrap">
-                                    <a
+                                    <Link
                                       className="featuredblock__link d-none d-lg-block"
-                                      href="spinal-decompression.html"
-                                      target=""
+                                      to="spinal-decompression"
                                     >
                                       <span
                                         className="featuredblock__icon"
-                                        alt=""
-                                        title=""
                                         aria-label="cicon chiro_1"
                                       >
                                         <span
@@ -137,16 +119,14 @@ const Home = () => {
                                         Spinal Decompression
                                         <br />
                                       </span>
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                       className="featuredblock__link d-sm-block d-lg-none"
-                                      href="spinal-decompression.html"
+                                      to="spinal-decompression"
                                       target=""
                                     >
                                       <span
                                         className="featuredblock__icon"
-                                        alt=""
-                                        title=""
                                         aria-label="cicon chiro_1"
                                       >
                                         <span
@@ -158,20 +138,17 @@ const Home = () => {
                                         Spinal Decompression
                                         <br />
                                       </span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </li>
                                 <li className="featuredblock__item col-sm-12 col-lg">
                                   <div className="featuredblock__wrap">
-                                    <a
+                                    <Link
                                       className="featuredblock__link d-none d-lg-block"
-                                      href="accident-injury-treatments.html"
-                                      target=""
+                                      to="accident-injury-treatments"
                                     >
                                       <span
                                         className="featuredblock__icon"
-                                        alt=""
-                                        title=""
                                         aria-label="icon automobile"
                                       >
                                         <span
@@ -183,16 +160,13 @@ const Home = () => {
                                         Auto Accident Injury
                                         <br />
                                       </span>
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                       className="featuredblock__link d-sm-block d-lg-none"
-                                      href="accident-injury-treatments.html"
-                                      target=""
+                                      to="accident-injury-treatments"
                                     >
                                       <span
                                         className="featuredblock__icon"
-                                        alt=""
-                                        title=""
                                         aria-label="icon automobile"
                                       >
                                         <span
@@ -204,15 +178,32 @@ const Home = () => {
                                         Auto Accident Injury
                                         <br />
                                       </span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </li>
                                 <li className="featuredblock__item col-sm-12 col-lg">
                                   <div className="featuredblock__wrap">
-                                    <a
+                                    <Link
                                       className="featuredblock__link d-none d-lg-block"
-                                      href="chiropractic-care.html"
-                                      target=""
+                                      to="chiropractic-care"
+                                    >
+                                      <span
+                                        className="featuredblock__icon"
+                                        aria-label="cicon chiro_2"
+                                      >
+                                        <span
+                                          className="icon cicon-chiro_2 main-icon"
+                                          aria-hidden="true"
+                                        ></span>
+                                      </span>
+                                      <span className="featuredblock__title">
+                                        Spinal Adjustment
+                                        <br />
+                                      </span>
+                                    </Link>
+                                    <Link
+                                      className="featuredblock__link d-sm-block d-lg-none"
+                                      to="chiropractic-care"
                                     >
                                       <span
                                         className="featuredblock__icon"
@@ -229,28 +220,7 @@ const Home = () => {
                                         Spinal Adjustment
                                         <br />
                                       </span>
-                                    </a>
-                                    <a
-                                      className="featuredblock__link d-sm-block d-lg-none"
-                                      href="chiropractic-care.html"
-                                      target=""
-                                    >
-                                      <span
-                                        className="featuredblock__icon"
-                                        alt=""
-                                        title=""
-                                        aria-label="cicon chiro_2"
-                                      >
-                                        <span
-                                          className="icon cicon-chiro_2 main-icon"
-                                          aria-hidden="true"
-                                        ></span>
-                                      </span>
-                                      <span className="featuredblock__title">
-                                        Spinal Adjustment
-                                        <br />
-                                      </span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </li>
                               </ul>
@@ -262,14 +232,7 @@ const Home = () => {
                   </div>
                   <div className="col-sm-12 stacked alias-blade2_home">
                     <div className="componentWith__container blade__container ">
-                      <div
-                        className="ple-column--stack ple-module-container blade2_home__container--inner blade__container--inner"
-                        data-component-name="blade2_home"
-                        data-component-alias="blade2_home"
-                        data-widget-alias="SMB__Blade__Widgets__BladeSettings___blade2_home"
-                        data-widget-id-base="BladeSettings-SMB__Blade__Widgets__BladeSettings___blade2_home"
-                        data-component-prop-componentWith="12"
-                      >
+                      <div className="ple-column--stack ple-module-container blade2_home__container--inner blade__container--inner">
                         <div className="blade-a blade-a--12 ">
                           <div className="blade-a__wrap ">
                             <div className="row align-items-center">
@@ -312,7 +275,7 @@ const Home = () => {
                                   <img
                                     loading="lazy"
                                     style={{ width: "100%" }}
-                                    src="https://cdcssl.ibsrv.net/ibimg/smb/1000x750_80/webmgr/1n/7/p/images/blade2.jpg.webp"
+                                    src={`${url}/img/blade2.jpg.webp`}
                                     alt="Patient receiving treatment"
                                     title="Patient receiving treatment"
                                   />
@@ -344,26 +307,19 @@ const Home = () => {
             <div className="row equal">
               <div className="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-cta_special">
                 <div className="componentWith__container cta__container ">
-                  <div
-                    className="ple-column--single ple-module-container cta_special__container--inner cta__container--inner"
-                    data-component-name="cta_special"
-                    data-component-alias="cta_special"
-                    data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_special"
-                    data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_special"
-                    data-component-prop-componentWith="12"
-                  >
+                  <div className="ple-column--single ple-module-container cta_special__container--inner cta__container--inner">
                     <div className="cta">
                       <div className="cta-a cta-a--12 text-center">
                         <div className="row">
                           <div className="col-md-12">
                             <div className="row justify-content-center">
                               <div className="col-sm-12 col-lg-6">
-                                <a
+                                <Link
                                   className="cta__button component__button--1"
-                                  href="special-offers.html"
+                                  to="special-offers"
                                 >
                                   SPECIAL OFFER FOR NEW PATIENTS ONLY
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </div>
@@ -397,15 +353,7 @@ const Home = () => {
                     style={{ margin: "60px 0px" }}
                   >
                     <div className="componentWith__container staff__container ">
-                      <div
-                        className="ple-column--stack ple-module-container staff_home___container--inner staff__container--inner"
-                        data-component-name="staff_home_"
-                        data-component-alias="staff_home_"
-                        data-widget-alias="SMB__Staff__Widgets__StaffSettings___staff_home_"
-                        data-widget-id-base="StaffSettings-SMB__Staff__Widgets__StaffSettings___staff_home_"
-                        data-component-prop-slug=""
-                        data-component-prop-componentWith="12"
-                      >
+                      <div className="ple-column--stack ple-module-container staff_home___container--inner staff__container--inner">
                         <div className="staff-b staff-b--12 staff__slider ">
                           <div
                             className="js-staff-layout-settings"
@@ -420,11 +368,7 @@ const Home = () => {
                                       alt="Tony Tropea, DC"
                                       title="Tony Tropea, DC"
                                       className="staff-member__image"
-                                      aria-label="Tony Tropea, DC"
-                                      data-mh="staff__staff_home_-1"
-                                      data-mh-source="true"
-                                      role="img"
-                                      src="https://cdcssl.ibsrv.net/ibimg/smb/768x1024_80/webmgr/1n/7/p/images/640664820ba6f_11.jpg.webp"
+                                      src={`${url}/img/640664820ba6f_11.jpg.webp`}
                                     />
                                   </div>
                                   <div
@@ -476,50 +420,32 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div
-        className="section-base-container ple-hide-for-desktop ple-hide-for-mobile ple-hide-for-tablet"
-        data-section-id="id_9fe82360-8745-584d-8f0d-903e3eab610a"
-      >
+      <div className="section-base-container ple-hide-for-desktop ple-hide-for-mobile ple-hide-for-tablet">
         <div className="section-overlap-container"></div>
         <div
           id="id_9fe82360-8745-584d-8f0d-903e3eab610a"
-          data-control="section"
           className="section section__bg--dark-1 forms--fullwidth forms-option--a section-partial"
         >
           <div className="section--inner container section--dark ">
             <div className="row equal">
               <div className="col-lg-12 section__column-1 col-sm-12 alias-chiro_where_is_your_pain">
-                {" "}
                 <div className="wrap__where_is_your_pain">
                   <div className="image_chiro__container image__container ">
-                    <div
-                      className=" image_chiro__container--inner image__container--inner"
-                      data-component-name="image_chiro"
-                      data-component-alias="image_chiro"
-                      data-widget-alias="SMB__Image__Widgets__ImageSettings___image_chiro"
-                      data-widget-id-base="ImageSettings-SMB__Image__Widgets__ImageSettings___image_chiro"
-                    >
-                      {" "}
+                    <div className=" image_chiro__container--inner image__container--inner">
                       <div className="image ">
                         <img
                           loading="lazy"
-                          src="https://cdcssl.ibsrv.net/ibimg/smb/2400x1000_80/webmgr/1n/7/p/_SHARED/chiro_spine_model_transparent.png.webp"
+                          src={`${url}/img/chiro_spine_model_transparent.png.webp`}
                           alt=""
                           title=""
                           style={{ width: "100%" }}
                         />
                       </div>
                     </div>
-                  </div>{" "}
+                  </div>
                   <div className="wrap__where_is_your_pain--inner">
                     <div className="cta_chiro0__container cta__container ">
-                      <div
-                        className=" cta_chiro0__container--inner cta__container--inner"
-                        data-component-name="cta_chiro0"
-                        data-component-alias="cta_chiro0"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro0"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro0"
-                      >
+                      <div className=" cta_chiro0__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
@@ -532,12 +458,12 @@ const Home = () => {
                                 </h4>
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="head-and-neck.html"
+                                      to="head-and-neck"
                                     >
                                       Head and Neck
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -545,27 +471,21 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                     <div className="cta_chiro1__container cta__container ">
-                      <div
-                        className=" cta_chiro1__container--inner cta__container--inner"
-                        data-component-name="cta_chiro1"
-                        data-component-alias="cta_chiro1"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro1"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro1"
-                      >
+                      <div className=" cta_chiro1__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="upper-back.html"
+                                      to="upper-back"
                                     >
                                       Upper Back
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -573,27 +493,21 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                     <div className="cta_chiro2__container cta__container ">
-                      <div
-                        className=" cta_chiro2__container--inner cta__container--inner"
-                        data-component-name="cta_chiro2"
-                        data-component-alias="cta_chiro2"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro2"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro2"
-                      >
+                      <div className=" cta_chiro2__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="shoulder-and-clavicle.html"
+                                      to="shoulder-and-clavicle"
                                     >
                                       Shoulder or Clavicle
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -601,27 +515,21 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                     <div className="cta_chiro3__container cta__container ">
-                      <div
-                        className=" cta_chiro3__container--inner cta__container--inner"
-                        data-component-name="cta_chiro3"
-                        data-component-alias="cta_chiro3"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro3"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro3"
-                      >
+                      <div className=" cta_chiro3__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="mid-back.html"
+                                      to="mid-back"
                                     >
                                       Mid-Back
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -631,25 +539,19 @@ const Home = () => {
                       </div>
                     </div>{" "}
                     <div className="cta_chiro4__container cta__container ">
-                      <div
-                        className=" cta_chiro4__container--inner cta__container--inner"
-                        data-component-name="cta_chiro4"
-                        data-component-alias="cta_chiro4"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro4"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro4"
-                      >
+                      <div className=" cta_chiro4__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="lower-back.html"
+                                      to="lower-back"
                                     >
                                       Lower Back
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -657,27 +559,21 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                     <div className="cta_chiro5__container cta__container ">
-                      <div
-                        className=" cta_chiro5__container--inner cta__container--inner"
-                        data-component-name="cta_chiro5"
-                        data-component-alias="cta_chiro5"
-                        data-widget-alias="SMB__Cta__Widgets__CtaSettings___cta_chiro5"
-                        data-widget-id-base="CtaSettings-SMB__Cta__Widgets__CtaSettings___cta_chiro5"
-                      >
+                      <div className=" cta_chiro5__container--inner cta__container--inner">
                         <div className="cta">
                           <div className="cta-a cta-a--12 text-center">
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="row justify-content-center">
                                   <div className="col-sm-12 col-lg-6">
-                                    <a
+                                    <Link
                                       className="cta__button component__button--1"
-                                      href="elbow-hand-and-wrist.html"
+                                      to="elbow-hand-and-wrist"
                                     >
                                       Elbow, Hand, and Wrist
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -685,7 +581,7 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                   </div>
                 </div>
               </div>

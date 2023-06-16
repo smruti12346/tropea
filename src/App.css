@@ -7,6 +7,7 @@
   --error: #ff0000;
   --success: #4caf50;
 }
+
 /* a {
   color: #0384d7 !important;
 } */
@@ -42,7 +43,7 @@
 }
 
 #id_0d990345-1d24-541b-9773-b328e758d957 {
-  background-image: url(https://cdcssl.ibsrv.net/ibimg/smb/3000x3000_80/webmgr/1n/7/p/sedona/stacked-background.jpg.webp);
+  background-image: url("https://cdcssl.ibsrv.net/ibimg/smb/3000x3000_80/webmgr/1n/7/p/sedona/stacked-background.jpg.webp");
 }
 #id_0d990345-1d24-541b-9773-b328e758d957::before {
   opacity: 0.55;
@@ -269,4 +270,22 @@ body #COVID19 .covid-close-link:hover {
 }
 .section--light .component__button--1:hover {
   transform: translate(0px, 0px) !important;
+}
+.section--light .component__button--1:hover {
+  transform: translate(0px, 0px) !important;
+}
+
+.mobile {
+  display: none !important;
+}
+.desktop {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block !important;
+  }
+  .desktop {
+    display: none;
+  }
 }

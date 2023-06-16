@@ -14,3 +14,17 @@ header {
 .css-9tj150-MuiButton-endIcon {
   display: inline-block !important;
 }
+.mobile {
+  display: none !important;
+}
+.desktop {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block !important;
+  }
+  .desktop {
+    display: none;
+  }
+}

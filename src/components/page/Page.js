@@ -5,6 +5,7 @@ import { api_url } from "../../Auth";
 import { Box } from "@mui/material";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useParams } from "react-router-dom";
+import "./Page.css";
 const Page = () => {
   const [title, setTitle] = useState();
   const [desc, setDesc] = useState();
@@ -100,9 +101,9 @@ const Page = () => {
                         <div className="componentWith__container pagetitle__container ">
                           <div className="ple-column--stack ple-module-container pagetitle__container--inner pagetitle__container--inner">
                             <div className="component pagetitle ">
-                              <div className="pagecomponent__wrap text--left">
+                              {/* <div className="pagecomponent__wrap text--left">
                                 <h1>{title}</h1>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>

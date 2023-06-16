@@ -9,25 +9,19 @@ import Page from "./components/page/Page";
 function App() {
   return (
     <>
-      <Router basename="/">
+      <Router basename="/tropea">
         <Header />
         <Routes>
           <Route
             path="/"
             element={<Home />}
           />
-          {/* <Route
-            path="/about"
-            element={<About />}
-          /> */}
           <Route
             path=":pages"
             element={<Page />}
           />
-          {/* <About />*/}
         </Routes>
         <ContactUs />
-        {/* <Map /> */}
         <Footer />
       </Router>
     </>

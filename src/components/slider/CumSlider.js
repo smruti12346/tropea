@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
-
+import { url } from "../../Auth";
 const CumSlider = () => {
   const settings = {
     dots: true,
@@ -45,7 +45,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card  ">
             <img
-              src="img/carousel1.webp"
+              src={`${url}/img/carousel1.webp`}
               alt="Image 1"
             />
           </div>
@@ -53,7 +53,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card  ">
             <img
-              src="img/carousel2.webp"
+              src={`${url}/img/carousel2.webp`}
               alt="Image 2"
             />
           </div>
@@ -61,7 +61,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card  ">
             <img
-              src="img/carousel3.webp"
+              src={`${url}/img/carousel3.webp`}
               alt="Image 3"
             />
           </div>
@@ -69,7 +69,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card  ">
             <img
-              src="img/carousel4.webp"
+              src={`${url}/img/carousel4.webp`}
               alt="Image 4"
             />
           </div>
@@ -77,7 +77,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card ">
             <img
-              src="img/carousel5.webp"
+              src={`${url}/img/carousel5.webp`}
               alt="Image 5"
             />
           </div>
@@ -85,7 +85,7 @@ const CumSlider = () => {
         <div className="card-menu">
           <div className="card  ">
             <img
-              src="img/carousel6.webp"
+              src={`${url}/img/carousel6.webp`}
               alt="Image 6"
             />
           </div>

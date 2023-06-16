@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomeBanner.css";
+import { Link } from "react-router-dom";
 const HomeBanner = () => {
   return (
     <>
@@ -19,12 +20,12 @@ const HomeBanner = () => {
                 chiropractic care.
               </p>
               <div class="w-100 banner-c__button component__button text-center">
-                <a
+                <Link
                   class="cta__button component__button--1 banner_btn"
-                  href="/appointment"
+                  to="appointment-request"
                 >
                   Request Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
