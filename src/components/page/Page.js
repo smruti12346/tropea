@@ -18,7 +18,7 @@ const Page = () => {
     try {
       axios.get(`${api_url}/pages?slug=${params.pages}`).then((data) => {
         console.log(data);
-        if (data.data.length == 0) {
+        if (data.data.length === 0) {
           console.log("return 0");
         } else {
           let fetchData = data.data[0];
@@ -117,7 +117,7 @@ const Page = () => {
                                 data-component-name="editable"
                                 data-component-alias="editable"
                               >
-                                {image != "" ? (
+                                {image !== "" ? (
                                   <picture>
                                     <source
                                       media="(max-width: 767px)"

@@ -9,7 +9,7 @@ import Page from "./components/page/Page";
 function App() {
   return (
     <>
-      <Router basename="/tropea">
+      <Router basename="/">
         <Header />
         <Routes>
           <Route
