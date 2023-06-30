@@ -12,8 +12,6 @@ function Customersays() {
           "https://service-reviews-ultimate.elfsight.com/data/reviews?uris%5B%5D=ChIJVZVdel22j4ARx0fkPCFoFzc&with_text_only=1&min_rating=5&page_length=100&order=date"
         )
         .then((res) => {
-          console.log(res.data.result.data);
-
           setData(res.data.result.data);
         });
     } catch (error) {
@@ -36,9 +34,12 @@ function Customersays() {
           className="row"
           style={{ paddingTop: "30px" }}
         >
-          {data.slice(0, slice).map((item) => {
+          {data.slice(0, slice).map((item, index) => {
             return (
-              <div className="col-md-6 col-lg-3 mb-4">
+              <div
+                className="col-md-6 col-lg-3 mb-4"
+                key={index}
+              >
                 <div className="testimonial-box text-center">
                   <img
                     src={item.reviewer_picture_url}

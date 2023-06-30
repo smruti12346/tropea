@@ -37,23 +37,30 @@ const Footer = () => {
                                 <a
                                   rel="nofollow"
                                   className="copyright__link"
-                                  href="http://www.chiromatrix.com/"
+                                  href="https://digitalvate.com/"
                                   target="_blank"
                                 >
-                                  Copyright © 2023 MH Sub I, LLC dba iMatrix
+                                  Copyright © 2023 Tropea Chiropractic INC &
+                                  Developed By{" "}
+                                  <a
+                                    href="https://digitalvate.com/"
+                                    target="_blank"
+                                  >
+                                    Digitalvate
+                                  </a>
                                 </a>
                               </li>
                               <li className="copyright__item">
                                 <a
                                   rel="nofollow"
                                   className="copyright__link"
-                                  href="https://portal.chiromatrixbase.com/"
+                                  href="https://api.tonytropeadc.com/wp-admin"
                                   target="_blank"
                                 >
                                   Admin Log In
                                 </a>
                               </li>
-                              <li className="copyright__item">
+                              {/* <li className="copyright__item">
                                 <a
                                   rel="nofollow"
                                   className="copyright__link"
@@ -62,8 +69,8 @@ const Footer = () => {
                                 >
                                   Privacy Policy
                                 </a>
-                              </li>
-                              <li className="copyright__item">
+                              </li> */}
+                              {/* <li className="copyright__item">
                                 <a
                                   rel="nofollow"
                                   className="copyright__link"
@@ -82,11 +89,30 @@ const Footer = () => {
                                 >
                                   Health Disclaimer
                                 </a>
-                              </li>
+                              </li> */}
                             </ul>
                           </div>
 
-                          <div className="copyright__description"></div>
+                          <div className="copyright__description pb-3 text-center text-white social">
+                            <a
+                              href="https://www.facebook.com/TropeaChiropractic/"
+                              target="_blank"
+                            >
+                              <i className="fa fa-facebook"></i>
+                            </a>
+                            <a
+                              href="https://www.instagram.com/tropeachiropractic09/"
+                              target="_blank"
+                            >
+                              <i className="fa fa-instagram"></i>
+                            </a>
+                            <a
+                              href="#"
+                              target="_blank"
+                            >
+                              <i className="fa fa-linkedin"></i>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>

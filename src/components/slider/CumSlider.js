@@ -40,7 +40,7 @@ const CumSlider = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container px-5">
       <Slider {...settings}>
         <div className="card-menu">
           <div className="card  ">

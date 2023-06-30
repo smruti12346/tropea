@@ -4,9 +4,45 @@ import Customersays from "./WhatCustomerSays/Customersays";
 import HomeBanner from "./HomeBanner";
 import { Link } from "react-router-dom";
 import { url } from "../Auth";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA</title>
+        <meta
+          name="description"
+          content="Our chiropractor at Tropea Chiropractic Inc is dedicated to helping Sunnyvale, CA, residents achieve their health and wellness goals. Call (408) 329-9604 today!"
+        />
+        <meta
+          name="keywords"
+          content="chiropractor"
+        />
+        <meta
+          name="SiteID"
+          content="0076741"
+        />
+        <meta
+          property="og:title"
+          content="Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA"
+        />
+        <meta
+          property="og:type"
+          content="website"
+        />
+        <meta
+          property="og:description"
+          content="Our chiropractor at Tropea Chiropractic Inc is dedicated to helping Sunnyvale, CA, residents achieve their health and wellness goals. Call (408) 329-9604 today!"
+        />
+        <meta
+          property="og:url"
+          content="https://www.tonytropeadc.com"
+        />
+        <meta
+          property="og:image"
+          content="https://cdcssl.ibsrv.net/ibimg/smb/200x200_80/webmgr/1n/7/p/61f456f6b11f6_blade_20230124_1537.jpg.webp"
+        />
+      </Helmet>
       <HomeBanner />
       <div className="section-base-container">
         <div className="section-overlap-container"></div>
@@ -74,7 +110,10 @@ const Home = () => {
                                   </p>
                                 </div>
                                 <div className="row blade-a__links">
-                                  <div className="col-sm-12 col-lg-6">
+                                  <div
+                                    className="col-sm-12 col-lg-6"
+                                    style={{ height: "60px" }}
+                                  >
                                     <Link
                                       className="cta__button component__button--1"
                                       to="meet-the-doctor"
@@ -110,10 +149,15 @@ const Home = () => {
                                         className="featuredblock__icon"
                                         aria-label="cicon chiro_1"
                                       >
-                                        <span
+                                        {/* <span
                                           className="icon cicon-chiro_1 main-icon"
                                           aria-hidden="true"
-                                        ></span>
+                                        ></span> */}
+                                        <img
+                                          src={`/icons/spinal.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Spinal Decompression
@@ -129,10 +173,15 @@ const Home = () => {
                                         className="featuredblock__icon"
                                         aria-label="cicon chiro_1"
                                       >
-                                        <span
+                                        {/* <span
                                           className="icon cicon-chiro_1 main-icon"
                                           aria-hidden="true"
-                                        ></span>
+                                        ></span> */}
+                                        <img
+                                          src={`/icons/spinal.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Spinal Decompression
@@ -151,10 +200,15 @@ const Home = () => {
                                         className="featuredblock__icon"
                                         aria-label="icon automobile"
                                       >
-                                        <span
+                                        {/* <span
                                           className="icon icon-automobile main-icon"
                                           aria-hidden="true"
-                                        ></span>
+                                        ></span> */}
+                                        <img
+                                          src={`/icons/car.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Auto Accident Injury
@@ -169,10 +223,11 @@ const Home = () => {
                                         className="featuredblock__icon"
                                         aria-label="icon automobile"
                                       >
-                                        <span
-                                          className="icon icon-automobile main-icon"
-                                          aria-hidden="true"
-                                        ></span>
+                                        <img
+                                          src={`/icons/car.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Auto Accident Injury
@@ -191,10 +246,15 @@ const Home = () => {
                                         className="featuredblock__icon"
                                         aria-label="cicon chiro_2"
                                       >
-                                        <span
+                                        {/* <span
                                           className="icon cicon-chiro_2 main-icon"
                                           aria-hidden="true"
-                                        ></span>
+                                        ></span> */}
+                                        <img
+                                          src={`/icons/adjustment.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Spinal Adjustment
@@ -211,10 +271,11 @@ const Home = () => {
                                         title=""
                                         aria-label="cicon chiro_2"
                                       >
-                                        <span
-                                          className="icon cicon-chiro_2 main-icon"
-                                          aria-hidden="true"
-                                        ></span>
+                                        <img
+                                          src={`/icons/adjustment.png`}
+                                          width={60}
+                                          style={{ color: "red" }}
+                                        />
                                       </span>
                                       <span className="featuredblock__title">
                                         Spinal Adjustment
@@ -258,7 +319,10 @@ const Home = () => {
                                   </p>
                                 </div>
                                 <div className="row blade-a__links">
-                                  <div className="col-sm-12 col-lg-6">
+                                  <div
+                                    className="col-sm-12 col-lg-6"
+                                    style={{ height: "100px" }}
+                                  >
                                     <a
                                       className="cta__button component__button--1"
                                       href="https://player.vimeo.com/video/110774448"

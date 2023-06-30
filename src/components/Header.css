@@ -21,6 +21,9 @@ header {
   display: block;
 }
 @media screen and (max-width: 600px) {
+  #id_3108e6d0-f41f-5166-9b03-d9ae29055df4::before {
+    display: none;
+  }
   .mobile {
     display: block !important;
   }
