@@ -389,15 +389,15 @@ const Header = (props) => {
           >
             ×
           </span>
-          <h2 className="covid-heading">
+          <h2 className="covid-heading text-danger">
             {/* New Patient Special!  */}
             Celebrate with us!
           </h2>
           <p className="covid-content"></p>
           {/* <h5 className="covid-heading"> */}
-          <h5
+          <p
             className="covid-headin"
-            style={{ color: "#6715ab" }}
+            style={{ color: "#4a4a4a", fontWeight: "bold" }}
           >
             {/* $50 Spinal Decompression Consultation */}
             Dr. Tropea is celebrating his 27th year in practice. We want to
@@ -406,7 +406,7 @@ const Header = (props) => {
             July 31st, 2023.
             <br />
             {/* Special Offer ($200 Normally){" "} */}
-          </h5>
+          </p>
           <p>
             {/* We offer personalized natural care through advanced treatments that
             decrease discomfort and increase cushioning and vitality. */}
