@@ -1,0 +1,52 @@
+.ibeugdpr-banner {
+    width: 516px;
+    height: 380px;
+    border-radius: 4px;
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 44px 0 rgba(0, 0, 0, 0.5);
+    padding: 0px 37px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.ibeugdpr-banner p {
+    color: #566986 !important;
+    font-size: 13px !important;
+    line-height: 20px;
+    font-weight: 100 !important;
+    text-shadow: none !important;
+}
+
+.ibeugdpr-banner p:first-child {
+    padding-top: 31px;
+}
+.ibeugdpr-banner p:nth-child(2) {
+    margin-top: 2px;
+}
+
+.ibeugdpr-banner a, .ibeugdpr-banner a:visited {
+    color: #1aa4fd !important;
+    font-size: 13px !important;
+}
+
+.ibeugdpr-banner p:last-child a {
+    color: #fff !important;
+    border-radius: 4px !important;
+    background-color: #1aa4fd;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    width: 95px;
+    margin-top: 25px;
+}
+
+.ibeugdpr-banner p:last-child {
+    text-align: center;
+    border-top: 1px solid #eef2f7;
+    position: relative;
+    width: 516px;
+    margin-left: -37px;
+}
+
+.ibeugdpr-banner p:last-child a:hover {
+    background-color: #1aa4fd;
+}

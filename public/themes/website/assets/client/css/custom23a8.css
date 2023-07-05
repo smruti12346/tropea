@@ -1,0 +1,38 @@
+.row.blade-a__links {
+    margin-top: 8%;
+}
+@media (max-width: 767px) {
+    .editable__container img {
+        max-width: 100% !important;
+        margin: auto !important;
+        width: auto !important;
+        float: none !important;
+        height: auto !important;
+        display: block !important;
+        padding-bottom: 7px !important;
+    }
+    .staff-member {
+        display: block !important;
+    }
+     .staff-member__name {
+        margin-top: 0rem !important;
+        text-align: center;
+    }
+    .staff-member__text-wrap {
+         padding-top: 2.125rem !important;
+     }
+     .staff-member__text{
+         min-height: auto !important;
+     }
+    .staff-member__image {
+        max-width: 250px !important;
+        min-width: 250px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    .staff-member__image-wrapper {
+        margin: 0 auto !important;
+        padding-top: 20px !important;
+        text-align: center;
+    }
+}

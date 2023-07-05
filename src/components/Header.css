@@ -1,0 +1,33 @@
+header {
+  background-color: #6715ab;
+}
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+.md-button {
+  text-transform: none;
+}
+.css-9tj150-MuiButton-endIcon {
+  display: inline-block !important;
+}
+.mobile {
+  display: none !important;
+}
+.desktop {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  #id_3108e6d0-f41f-5166-9b03-d9ae29055df4::before {
+    display: none;
+  }
+  .mobile {
+    display: block !important;
+  }
+  .desktop {
+    display: none;
+  }
+}
