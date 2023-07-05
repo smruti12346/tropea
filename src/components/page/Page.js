@@ -20,6 +20,8 @@ const Page = () => {
         console.log(data);
         if (data.data.length === 0) {
           console.log("return 0");
+          setTitle("404 Not Found");
+          setDesc("<h2 class='text-center text-white'>404 ERROR!</h2>");
         } else {
           let fetchData = data.data[0];
           setTitle(fetchData.title.rendered);

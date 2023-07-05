@@ -9,6 +9,7 @@ import Page from "./components/page/Page";
 import { HelmetProvider } from "react-helmet-async";
 import Blog from "./components/blog/Blog";
 import Single from "./components/blog/Single";
+import NotFound from "./components/NotFound";
 function App() {
   return (
     <>
@@ -23,6 +24,10 @@ function App() {
             <Route
               path=":pages"
               element={<Page />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
             <Route
               path="blog"

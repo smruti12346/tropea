@@ -12,11 +12,12 @@ const Home = () => {
         <title>Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA</title>
         <meta
           name="description"
-          content="Our chiropractor at Tropea Chiropractic Inc is dedicated to helping Sunnyvale, CA, residents achieve their health and wellness goals. Call (408) 329-9604 today!"
+          content="Looking for a trusted chiropractic doctor near you? Tropea Chiropractic
+offers noninvasive pain relief and personalized care. Schedule your consultation today!"
         />
         <meta
           name="keywords"
-          content="chiropractor"
+          content="chiropractic doctor near me, chiropractic doctors near me, best chiropractic doctor near me, chiropractic treatment near me, best chiropractic near me, emergency chiropractic near me, chiropractic clinic near me, chiropractic near me walk in"
         />
         <meta
           name="SiteID"
@@ -24,7 +25,7 @@ const Home = () => {
         />
         <meta
           property="og:title"
-          content="Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA"
+          content="Trusted Chiropractic Doctor Near Me | Tropea Chiropractic"
         />
         <meta
           property="og:type"
@@ -32,7 +33,8 @@ const Home = () => {
         />
         <meta
           property="og:description"
-          content="Our chiropractor at Tropea Chiropractic Inc is dedicated to helping Sunnyvale, CA, residents achieve their health and wellness goals. Call (408) 329-9604 today!"
+          content="Looking for a trusted chiropractic doctor near you? Tropea Chiropractic
+offers noninvasive pain relief and personalized care. Schedule your consultation today!"
         />
         <meta
           property="og:url"
