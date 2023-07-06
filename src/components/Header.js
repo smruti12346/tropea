@@ -407,14 +407,14 @@ const Header = (props) => {
             <br />
             {/* Special Offer ($200 Normally){" "} */}
           </p>
-          <p>
+          <p className="para-section">
             {/* We offer personalized natural care through advanced treatments that
             decrease discomfort and increase cushioning and vitality. */}
             This is the perfect time to have your friends and loved ones try out
             chiropractic adjustments. Have them bring a screenshot of this
             picture to receive the promotional price.
           </p>
-          <p>
+          <p className="para-section">
             Call{" "}
             <a
               href="tel:4083299604"
