@@ -3,13 +3,11 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import { api_url } from "../Auth";
-import axios from "axios";
 import LinearProgress from "@mui/material/LinearProgress";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import { url } from "../Auth";
 import List from "@mui/material/List";
@@ -18,17 +16,227 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import Image from "next/image";
+import Head from "next/head";
+
 const pages = [
-  { name: "About Us", id: 16, slug: "about-us" },
-  { name: "Chiropractic Services", id: "16", slug: "chiropractic-care" },
-  { name: "Auto Accident Treatment", id: 16, slug: "auto-accident-treatment" },
-  { name: "New Patient Center", id: 16, slug: "new-patient-center" },
-  { name: "Resources", id: 16, slug: "new-patient-center" },
-  { name: "Contact", id: 16, slug: "contact" },
-  { name: "3D Spine Simulator", id: 17, slug: "3d-spine-simulator" },
+  {
+    name: "About Us",
+    id: 16,
+    slug: "about-us",
+    child: [
+      {
+        name: "MEET THE DOCTOR",
+        slug: "meet-the-doctor",
+      },
+      {
+        name: "TESTIMONIALS",
+        slug: "testimonial",
+      },
+    ],
+  },
+  {
+    name: "Chiropractic Services",
+    id: "16",
+    slug: "chiropractic-care",
+    child: [
+      {
+        name: "BACK PAIN",
+        slug: "back-pain",
+        child: [
+          {
+            name: "BACK PAIN FAQS",
+            slug: "back-pain-faqs",
+          },
+        ],
+      },
+      {
+        name: "Chiropractic Care",
+        slug: "chiropractic-care",
+      },
+      {
+        name: "Common Airbag and Seatbelt Injury",
+        slug: "common-airbag-and-seatbelt-injuries",
+      },
+      {
+        name: "Concussions",
+        slug: "concussions",
+      },
+      {
+        name: "Headaches",
+        slug: "headaches",
+      },
+      {
+        name: "Headaches After a Car Accident",
+        slug: "headaches-after-a-car-accident",
+      },
+      {
+        name: "Herniated Discs",
+        slug: "herniated",
+      },
+      {
+        name: "Headaches",
+        slug: "headaches",
+      },
+      {
+        name: "Knee Pain",
+        slug: "knee-pain",
+        child: [
+          {
+            name: "Knee Pain FAQs",
+            slug: "knee-pain-faqs",
+          },
+        ],
+      },
+      {
+        name: "Lifestyle & Nutritional Advice",
+        slug: "lifestyle-and-nutritional-advice",
+      },
+      {
+        name: "Lower Back Pain",
+        slug: "lower-back-pain",
+      },
+      {
+        name: "Neck Pain",
+        slug: "neck-pain",
+        child: [
+          {
+            name: "Neck Pain FAQs",
+            slug: "neck-pain-faqs",
+          },
+        ],
+      },
+
+      {
+        name: "Sciatica",
+        slug: "sciatica",
+      },
+      {
+        name: "Shockwave Therapy",
+        slug: "shockwave-therapy",
+      },
+      {
+        name: "Shoulder Injury from Auto Accident",
+        slug: "shoulder-injury",
+      },
+      {
+        name: "Shoulder Pain",
+        slug: "shoulder-pain",
+        child: [
+          {
+            name: "Shoulder Pain FAQs",
+            slug: "shoulder-pain-faqs",
+          },
+        ],
+      },
+
+      {
+        name: "Spinal Decompression",
+        slug: "spinal-decompression",
+      },
+      {
+        name: "Spinal Manipulation & Adjustment",
+        slug: "spinal-manipulation-adjustment",
+      },
+
+      {
+        name: "Sports Injury",
+        slug: "sports-injury",
+      },
+
+      {
+        name: "Whiplash",
+        slug: "whiplash-treatment",
+        child: [
+          {
+            name: "Whiplash FAQs",
+            slug: "whiplash-faqs",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    name: "Auto Accident Treatment",
+    id: 16,
+    slug: "auto-accident-treatment",
+    child: [
+      {
+        name: "Auto Accident FAQs",
+        slug: "auto-accident-faqs",
+      },
+    ],
+  },
+  {
+    name: "New Patient Center",
+    id: 16,
+    slug: "new-patient-center",
+    child: [
+      {
+        name: "Special Offers",
+        slug: "special-offers",
+      },
+      {
+        name: "Online Forms",
+        slug: "online-forms",
+      },
+      {
+        name: "Payment Options",
+        slug: "payment-options",
+      },
+      {
+        name: "What to Expect",
+        slug: "what-to-expect",
+        child: [
+          {
+            name: "Your First Visit",
+            slug: "your-first-visit",
+          },
+          {
+            name: "Phase 1: Relief Care",
+            slug: "phase-1-relief-care",
+          },
+          {
+            name: "Phase 2: Corrective Care",
+            slug: "phase-2-corrective-care",
+          },
+          {
+            name: "Phase 3: Wellness Care",
+            slug: "phase-3-wellness-care",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    name: "Resources",
+    id: 16,
+    slug: "resources",
+    child: [
+      {
+        name: "3D Spine Simulator",
+        slug: "3d-spine-simulator",
+      },
+    ],
+  },
+  {
+    name: "Contact",
+    id: 16,
+    slug: "contact",
+    child: [
+      {
+        name: "Appointment Request",
+        slug: "appointment-request",
+      },
+    ],
+  },
+  {
+    name: "Blog",
+    id: 16,
+    slug: "blog",
+  },
 ];
 
 const Header = (props) => {
@@ -43,6 +251,25 @@ const Header = (props) => {
   const handleMenuClose = () => {
     setMenu(false);
   };
+
+  const handleDropdown = (event, isClild) => {
+    if (isClild) {
+      event.currentTarget.className =
+        " navigation__item navigation__item--default  has-drop-down navigation-open";
+    } else {
+      event.currentTarget.className =
+        " navigation__item navigation__item--default";
+    }
+  };
+  const handleDropdownOut = (event, isClild) => {
+    if (isClild) {
+      event.currentTarget.className =
+        " navigation__item navigation__item--default  has-drop-down";
+    } else {
+      event.currentTarget.className =
+        " navigation__item navigation__item--default";
+    }
+  };
   // const toggleDrawer = (newOpen) => () => {
   //   setOpen(newOpen);
   // };
@@ -53,6 +280,10 @@ const Header = (props) => {
     //setAnchorEl(null);
   };
 
+  const location = useRouter();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const para = useRef();
   const btn = useRef();
@@ -85,27 +316,24 @@ const Header = (props) => {
     event.currentTarget.className += " navigation-open";
   };
 
-  useEffect(() => {
-    axios.get(`${api_url}/menu`).then((data) => {
-      let newData = data.data;
-      let obj_data = newData.map((deta) => {
-        if (deta.menu_item_parent == 0) {
-          let filt = newData.filter((dt) => {
-            return deta.db_id == dt.menu_item_parent;
-          });
-          // if (filt.menu_item_parent == 0){
-
-          // }else{
-
-          // }
-          return { title: deta.title, url: deta.url, child: filt };
-        } else {
-          return { title: deta.title, url: deta.url, clild: false };
-        }
-      });
-      setDeta(obj_data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`${api_url}/menu`).then((data) => {
+  //     let newData = data.data;
+  //     console.log(newData);
+  //     let obj_data = newData.map((deta) => {
+  //       if (deta.menu_item_parent == 0) {
+  //         let filt = newData.filter((dt) => {
+  //           return deta.db_id == dt.menu_item_parent;
+  //         });
+  //         return { title: deta.title, url: deta.url, child: filt };
+  //       } else {
+  //         return false;
+  //       }
+  //     });
+  //     setDeta(obj_data);
+  //     console.log(obj_data);
+  //   });
+  // }, []);
 
   const list = (anchor) => (
     <Box
@@ -142,8 +370,101 @@ const Header = (props) => {
     </Box>
   );
 
+  const closeModalCOVID19 = () => {
+    document.getElementById("COVID19").style.display = "none";
+  };
+
   return (
     <>
+      <Head>
+        <meta
+          name="robots"
+          content="max-image-preview:large"
+        />
+        <meta
+          name="robots"
+          content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+      </Head>
+      <div
+        id="COVID19"
+        className="modalDialog"
+      >
+        <div
+          className="covid-modal"
+          style={{ borderColor: "#CE0F0F" }}
+        >
+          <span
+            className="covid-close"
+            onClick={closeModalCOVID19}
+          >
+            ×
+          </span>
+          <h2 className="covid-heading text-danger">
+            {/* New Patient Special!  */}
+            Celebrate with us!
+          </h2>
+          <p className="covid-content"></p>
+          {/* <h5 className="covid-heading"> */}
+          <p
+            className="covid-headin"
+            style={{ color: "#4a4a4a", fontWeight: "bold" }}
+          >
+            {/* $50 Spinal Decompression Consultation */}
+            Dr. Tropea is celebrating his 27th year in practice. We want to
+            celebrate by offering all new patients an initial visit (exam and
+            treatment) for $27. This promotion is valid from July 3rd through
+            July 31st, 2023.
+            <br />
+            {/* Special Offer ($200 Normally){" "} */}
+          </p>
+          <p className="para-section">
+            {/* We offer personalized natural care through advanced treatments that
+            decrease discomfort and increase cushioning and vitality. */}
+            This is the perfect time to have your friends and loved ones try out
+            chiropractic adjustments. Have them bring a screenshot of this
+            picture to receive the promotional price.
+          </p>
+          <p className="para-section">
+            Call{" "}
+            <a
+              href="tel:4083299604"
+              className="piwik_ignore"
+            >
+              (408) 329-9604
+            </a>
+          </p>
+          <a
+            href="tel:4083299604"
+            className="piwik_ignore"
+          >
+            <p>
+              <Image
+                width={150}
+                height={100}
+                loading="lazy"
+                src="/img/50-spinal-decompression-consultation-special-offer-200-normally_page-0001.jpg"
+                style={{ width: "150px", height: "auto" }}
+                alt="logo"
+              />
+            </p>{" "}
+          </a>
+          <div>
+            <a
+              href="tel:4083299604"
+              className="piwik_ignore"
+            ></a>
+          </div>
+          <div>
+            <a
+              className="covid-close-link"
+              onClick={closeModalCOVID19}
+            >
+              Close
+            </a>
+          </div>
+        </div>
+      </div>
       {isLoading ? (
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ width: "100%", mr: 1 }}>
@@ -164,9 +485,14 @@ const Header = (props) => {
       {/* mobile menu */}
       <Box sx={{ flexGrow: 1 }}>
         <AppBar
-          position="static"
+          position="sticky"
           color="primary"
-          style={{ zIndex: 99999, backgroundColor: "#6715ab" }}
+          style={{
+            zIndex: 999,
+            backgroundColor: "#6715ab",
+            position: "fixed",
+            top: "0px",
+          }}
           className="mobile"
         >
           <Toolbar>
@@ -175,23 +501,26 @@ const Header = (props) => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
               onClick={handleMenuOpen}
             >
-              <MenuIcon onClick={handleMenuOpen} />
+              <MenuIcon
+                onClick={handleMenuOpen}
+                style={{ fontSize: "32px" }}
+              />
             </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
+
+            <Button
+              color="inherit"
+              style={{ marginLeft: "auto" }}
             >
-              Tony Tropea
-            </Typography>
-            <Button color="inherit">
               <Link
                 href="/appointment-request"
-                className="btn btn-primary"
-                scroll={true}
+                className="btn btn-sm"
+                style={{
+                  bachgroundColor: "red",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                }}
               >
                 Request Appointment
               </Link>
@@ -209,6 +538,29 @@ const Header = (props) => {
               onClose={handleMenuClose}
               onOpen={handleMenuOpen}
             >
+              <Link
+                href="/"
+                style={{ cursor: "pointer" }}
+                sx={{ flexGrow: 1 }}
+                onClick={handleMenuClose}
+              >
+                <div className="text-center">
+                  <Image
+                    width={220}
+                    height={200}
+                    src={`${url}/img/logo.webp`}
+                    className="logo-a__img"
+                    style={{
+                      height: "auto",
+                      width: "220px",
+                      borderBottom: "1px solid #000",
+                      padding: "10px",
+                    }}
+                    alt="Tropea Chiropractic Inc​"
+                    title=""
+                  />
+                </div>
+              </Link>
               {list(anchor)}
             </SwipeableDrawer>
           </React.Fragment>
@@ -228,12 +580,11 @@ const Header = (props) => {
       >
         <div
           className="section-base-container ple-hide-for-mobile"
-          data-section-id="id_3108e6d0-f41f-5166-9b03-d9ae29055df4"
+          style={{ position: "relative" }}
         >
           <div className="section-overlap-container"></div>
           <div
             id="id_3108e6d0-f41f-5166-9b03-d9ae29055df4"
-            data-control="section"
             className="section section__bg--light-1 d-none d-sm-none d-md-block   forms--fullwidth forms-option--a section-editable section-logo section-editable"
           >
             <div className="section--inner container-fluid section--light  ">
@@ -247,7 +598,6 @@ const Header = (props) => {
                           className="piwik_ignore"
                         >
                           <span className="phone__number">(408) 329-9604</span>
-                          <br />
                         </a>
                       </p>
                     </div>
@@ -265,12 +615,12 @@ const Header = (props) => {
                           >
                             <div className="logo-a__image">
                               <Image
-                                src={`/img/logo.webp`}
-                                className="logo-a__img"s
                                 width={500}
                                 height={94}
+                                src={`${url}/img/logo.webp`}
+                                className="logo-a__img"
+                                style={{ height: "94px", width: "500px" }}
                                 alt="Tropea Chiropractic Inc​"
-                                title=""
                               />
                             </div>
                           </Link>
@@ -329,423 +679,77 @@ const Header = (props) => {
                         id="ple-navigation-navigation_header"
                       >
                         <ul className="navigation__list navigation__list--head more_nav">
-                          <li
-                            className={`navigation__item navigation__item--default has-drop-down`}
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <Link
-                              href="/about-us"
-                              className="navigation__item--link"
+                          {pages.map((item, index) => (
+                            <li
+                              className={`navigation__item navigation__item--default has-drop-down`}
+                              onMouseOver={handleMouse}
+                              onMouseLeave={handleClose}
+                              key={index}
                             >
-                              About Us
-                            </Link>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="meet-the-doctor"
-                                  className="navigation__item--link"
-                                >
-                                  Meet the Doctor
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="testimonial"
-                                  className="navigation__item--link"
-                                >
-                                  Testimonials
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
+                              <Link
+                                href={`/${item.slug}`}
+                                className="navigation__item--link"
+                              >
+                                {item.name}
+                              </Link>
+                              <ul className="navigation__list navigation__list--sub">
+                                {item.child ? (
+                                  <>
+                                    {item.child.map((childItem, index) => (
+                                      <li
+                                        className={`navigation__item navigation__item--default  ${
+                                          childItem.child ? "has-drop-down" : ""
+                                        }`}
+                                        key={index}
+                                        onMouseEnter={(event) =>
+                                          handleDropdown(event, childItem.child)
+                                        }
+                                        onMouseLeave={(event) =>
+                                          handleDropdownOut(
+                                            event,
+                                            childItem.child
+                                          )
+                                        }
+                                      >
+                                        <Link
+                                          href={childItem.slug}
+                                          className="navigation__item--link"
+                                        >
+                                          {childItem.name}
+                                        </Link>
 
-                          <li
-                            className="navigation__item navigation__item--default has-drop-down"
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <a
-                              href="#"
-                              className="navigation__item--link"
-                            >
-                              Chiropractic Services
-                            </a>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down"
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="back-pain"
-                                  className="navigation__item--link"
-                                >
-                                  Back Pain
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="back-pain-faqs"
-                                      className="navigation__item--link"
-                                    >
-                                      Back Pain FAQs
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="chiropractic-care"
-                                  className="navigation__item--link"
-                                >
-                                  Chiropractic Care
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="common-airbag-and-seatbelt-injuries"
-                                  className="navigation__item--link"
-                                >
-                                  Common Airbag and Seatbelt Injury
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="concussions"
-                                  className="navigation__item--link"
-                                >
-                                  Concussions
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="headaches"
-                                  className="navigation__item--link"
-                                >
-                                  Headaches
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="headaches-after-a-car-accident"
-                                  className="navigation__item--link"
-                                >
-                                  Headaches After a Car Accident
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="herniated"
-                                  className="navigation__item--link"
-                                >
-                                  Herniated Discs
-                                </Link>
-                              </li>
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down "
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="knee-pain"
-                                  className="navigation__item--link"
-                                >
-                                  Knee Pain
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="knee-pain-faqs"
-                                      className="navigation__item--link"
-                                    >
-                                      Knee Pain FAQs
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="lifestyle-and-nutritional-advice/"
-                                  className="navigation__item--link"
-                                >
-                                  Lifestyle &amp; Nutritional Advice
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="lower-back-pain"
-                                  className="navigation__item--link"
-                                >
-                                  Lower Back Pain
-                                </Link>
-                              </li>
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down "
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="neck-pain"
-                                  className="navigation__item--link"
-                                >
-                                  Neck Pain
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="neck-pain-faqs"
-                                      className="navigation__item--link"
-                                    >
-                                      Neck Pain FAQs
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="sciatica"
-                                  className="navigation__item--link"
-                                >
-                                  Sciatica
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="shockwave-therapy"
-                                  className="navigation__item--link"
-                                >
-                                  Shockwave Therapy
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="shoulder-injury"
-                                  className="navigation__item--link"
-                                >
-                                  Shoulder Injury from Auto Accident
-                                </Link>
-                              </li>
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down "
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="shoulder-pain"
-                                  className="navigation__item--link"
-                                >
-                                  Shoulder Pain
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="shoulder-pain-faqs"
-                                      className="navigation__item--link"
-                                    >
-                                      Shoulder Pain FAQs
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="spinal-decompression"
-                                  className="navigation__item--link"
-                                >
-                                  Spinal Decompression
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="spinal-manipulation-adjustment/"
-                                  className="navigation__item--link"
-                                >
-                                  Spinal Manipulation &amp; Adjustment
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="sports-injury"
-                                  className="navigation__item--link"
-                                >
-                                  Sports Injury
-                                </Link>
-                              </li>
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down "
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="whiplash-treatment"
-                                  className="navigation__item--link"
-                                >
-                                  Whiplash
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="whiplash-faqs"
-                                      className="navigation__item--link"
-                                    >
-                                      Whiplash FAQs
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            className="navigation__item navigation__item--default has-drop-down"
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <Link
-                              href="auto-accident-treatment"
-                              className="navigation__item--link"
-                            >
-                              Auto Accident Treatment
-                            </Link>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="auto-accident-faqs"
-                                  className="navigation__item--link"
-                                >
-                                  Auto Accident FAQs
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            className="navigation__item navigation__item--default has-drop-down"
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <Link
-                              href="new-patient-center"
-                              className="navigation__item--link"
-                            >
-                              New Patient Center
-                            </Link>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="special-offers"
-                                  className="navigation__item--link"
-                                >
-                                  Special Offers
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="online-forms"
-                                  className="navigation__item--link"
-                                >
-                                  Online Forms
-                                </Link>
-                              </li>
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="payment-options"
-                                  className="navigation__item--link"
-                                >
-                                  Payment Options
-                                </Link>
-                              </li>
-                              <li
-                                className="navigation__item navigation__item--default has-drop-down"
-                                onMouseOver={handleMouse}
-                                onMouseLeave={handleClose}
-                              >
-                                <Link
-                                  href="what-to-expect"
-                                  className="navigation__item--link"
-                                >
-                                  What to Expect
-                                </Link>
-                                <ul className="navigation__list navigation__list--sub">
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="your-first-visit"
-                                      className="navigation__item--link"
-                                    >
-                                      Your First Visit
-                                    </Link>
-                                  </li>
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="phase-1-relief-care"
-                                      className="navigation__item--link"
-                                    >
-                                      Phase 1: Relief Care
-                                    </Link>
-                                  </li>
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="phase-2-corrective-care"
-                                      className="navigation__item--link"
-                                    >
-                                      Phase 2: Corrective Care
-                                    </Link>
-                                  </li>
-                                  <li className="navigation__item navigation__item--default ">
-                                    <Link
-                                      href="phase-3-wellness-care"
-                                      className="navigation__item--link"
-                                    >
-                                      Phase 3: Wellness Care
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            className="navigation__item navigation__item--default has-drop-down"
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <Link
-                              href="resources"
-                              className="navigation__item--link"
-                            >
-                              Resources
-                            </Link>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="3d-spine-simulator"
-                                  className="navigation__item--link"
-                                >
-                                  3D Spine Simulator
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            className="navigation__item navigation__item--default has-drop-down"
-                            onMouseOver={handleMouse}
-                            onMouseLeave={handleClose}
-                          >
-                            <Link
-                              href="contact"
-                              className="navigation__item--link"
-                            >
-                              Contact
-                            </Link>
-                            <ul className="navigation__list navigation__list--sub">
-                              <li className="navigation__item navigation__item--default ">
-                                <Link
-                                  href="appointment-request"
-                                  className="navigation__item--link"
-                                >
-                                  Appointment Request
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
+                                        <ul className="navigation__list navigation__list--sub">
+                                          {childItem.child ? (
+                                            <>
+                                              {childItem.child.map(
+                                                (subchild, index) => (
+                                                  <li
+                                                    className="navigation__item navigation__item--default "
+                                                    key={index}
+                                                  >
+                                                    <Link
+                                                      href={subchild.slug}
+                                                      className="navigation__item--link"
+                                                    >
+                                                      {subchild.name}
+                                                    </Link>
+                                                  </li>
+                                                )
+                                              )}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </ul>
+                                      </li>
+                                    ))}
+                                  </>
+                                ) : (
+                                  ""
+                                )}
+                              </ul>
+                            </li>
+                          ))}
                         </ul>
                       </nav>
                     </div>

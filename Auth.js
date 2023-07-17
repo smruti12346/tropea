@@ -1,4 +1,4 @@
-const api_url = "http://162.241.116.186/tonytropea/wp-json/wp/v2";
+const api_url = "https://api.tonytropeadc.com/wp-json/wp/v2";
 // const url = "http://162.241.116.186/tropea";
-const url = "http://localhost:3000";
+const url = "https://tonytropeadc.com";
 export { api_url, url };

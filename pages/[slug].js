@@ -1,19 +1,54 @@
-import {useEffect, useState, React} from "react"
-const Slug = (props) =>{
-    const [title, setTitle] = useState();
-    const [desc, setDesc] = useState();
-    const [image, setImage] = useState("");
-
-    useEffect(() => {
-        let fetchData = props.data[0];
-        console.log(fetchData)
-        setTitle(fetchData.title.rendered);
-        setDesc(fetchData.content.rendered);
-        setImage(fetchData.acf.url);
-    },[props.data])
-    return (
-        <>
-        <div className="fullwidth-layout">
+import Head from "next/head";
+import Image from "next/image";
+import { useEffect, useState, React } from "react";
+const Slug = (props) => {
+  const [title, setTitle] = useState();
+  const [desc, setDesc] = useState();
+  const [image, setImage] = useState("");
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDesc, setMetaDesc] = useState("");
+  const [keyWord, setKeyWord] = useState("");
+  useEffect(() => {
+    let fetchData = props.data;
+    console.log(fetchData);
+    setTitle(fetchData.title.rendered);
+    setDesc(fetchData.content.rendered);
+    setImage(fetchData.acf.url);
+    setKeyWord(fetchData.acf?.keywords);
+    // setMetaDesc(fetchData[yoast_head_json].og_description);
+    // setMetaTitle(fetchData.yoast_head_json.og_title);
+    console.log(fetchData);
+  }, [props.data]);
+  return (
+    <>
+      <Head>
+        <title>Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA</title>
+        <meta
+          property="title"
+          content={`"${props.data?.yoast_head_json?.og_title}"`}
+        />
+        <meta
+          property="og:title"
+          content={`"${props.data?.yoast_head_json?.og_title}"`}
+        />
+        <meta
+          name="description"
+          content={`"${props.data?.yoast_head_json?.og_description}"`}
+        />
+        <meta
+          name="og:description"
+          content={`"${props.data?.yoast_head_json?.og_description}"`}
+        />
+        <meta
+          name="keywords"
+          content={`"${props.data?.acf?.keyword}"`}
+        />
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Head>
+      <div className="fullwidth-layout">
         <div
           data-control="section-available"
           className="section-available"
@@ -77,7 +112,7 @@ const Slug = (props) =>{
                                 data-component-name="editable"
                                 data-component-alias="editable"
                               >
-                                {image != "" ? (
+                                {image !== "" ? (
                                   <picture>
                                     <source
                                       media="(max-width: 767px)"
@@ -91,7 +126,9 @@ const Slug = (props) =>{
                                       media="(min-width: 1024px) and (max-width: 1400px)"
                                       srcset={image}
                                     />
-                                    <img
+                                    <Image
+                                      width={500}
+                                      height={500}
                                       id="mediaManagerImage"
                                       src={image}
                                       alt="Image of woman doing yoga. "
@@ -127,15 +164,28 @@ const Slug = (props) =>{
           </div>
         </div>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
 export default Slug;
+export async function getStaticPaths() {
+  const res = await fetch(
+    `https://api.tonytropeadc.com/wp-json/wp/v2/pages?per_page=100`
+  );
+  const pages = await res.json();
+  const paths = pages.map((item) => ({
+    params: { slug: `${item.slug}` },
+  }));
+  // const paths = [{params: {slug: ''}}]
+  return { paths: paths, fallback: false };
+}
 
-export async function getServerSideProps(router){
-    let url = router.query.slug;
-   const res = await fetch(`http://162.241.116.186/tonytropea/wp-json/wp/v2/pages?slug=${url}`)
-   const data = await res.json();
+export async function getStaticProps({ params }) {
+  //let url = router.query.slug;
+  const res = await fetch(
+    `https://api.tonytropeadc.com/wp-json/wp/v2/pages?slug=${params.slug}`
+  );
+  const data = await res.json();
 
-   return {props: {'data': data}}
-} 
+  return { props: { data: data[0] } };
+}
