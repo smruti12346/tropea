@@ -447,7 +447,7 @@ const Header = (props) => {
                 style={{ width: "150px", height: "auto" }}
                 alt="logo"
               />
-            </p>{" "}
+            </p>
           </a>
           <div>
             <a
