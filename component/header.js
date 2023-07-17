@@ -405,7 +405,6 @@ const Header = (props) => {
             Celebrate with us!
           </h2>
           <p className="covid-content"></p>
-          {/* <h5 className="covid-heading"> */}
           <p
             className="covid-headin"
             style={{ color: "#4a4a4a", fontWeight: "bold" }}
