@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState, React } from "react";
+import { useNavigate } from "next/router";
+import { useRouter } from "next/router";
 const Slug = (props) => {
   const [title, setTitle] = useState();
   const [desc, setDesc] = useState();
@@ -8,8 +10,12 @@ const Slug = (props) => {
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDesc, setMetaDesc] = useState("");
   const [keyWord, setKeyWord] = useState("");
+  const navigate = useRouter();
   useEffect(() => {
     let fetchData = props.data;
+    if (!props.data.id) {
+      navigate.push("/404");
+    }
     console.log(fetchData);
     setTitle(fetchData.title.rendered);
     setDesc(fetchData.content.rendered);
@@ -177,7 +183,7 @@ export async function getStaticPaths() {
     params: { slug: `${item.slug}` },
   }));
   // const paths = [{params: {slug: ''}}]
-  return { paths: paths, fallback: false };
+  return { paths: paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {

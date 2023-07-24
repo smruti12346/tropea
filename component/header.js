@@ -38,7 +38,7 @@ const pages = [
   {
     name: "Chiropractic Services",
     id: "16",
-    slug: "chiropractic-care",
+    slug: "chiropractic-care-near-me",
     child: [
       {
         name: "BACK PAIN",
@@ -52,7 +52,7 @@ const pages = [
       },
       {
         name: "Chiropractic Care",
-        slug: "chiropractic-care",
+        slug: "chiropractic-care-near-me",
       },
       {
         name: "Common Airbag and Seatbelt Injury",
