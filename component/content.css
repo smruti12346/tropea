@@ -1,0 +1,105 @@
+.bg-overlay {
+  position: relative;
+  background-image: url("/public/img/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.bg-overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(50 6 56 / 74%);
+}
+
+.container.trust {
+  position: relative;
+  z-index: 1;
+  /* text-align: center; */
+  padding: 40px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+.title1 {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.6px;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 26px;
+  font-family: "Times New Roman", serif;
+  color: #fff;
+  font-weight: 600;
+  /* text-align: center; */
+}
+.subtitle2 {
+  font-size: 18px;
+  font-family: "Times New Roman", serif;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+.title3 {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: #fff;
+}
+p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+.bold {
+  font-weight: 600;
+  color: #fff;
+}
+.faq li {
+  font-weight: 500;
+  color: #fff;
+}
+.features li,
+.about p,
+.expertise ul li,
+.why-choose-us ul li {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+ul li {
+  color: #fff;
+}
+li {
+  color: #fff;
+}
+
+@media screen and (min-height: 600px) {
+  .container.trust {
+    padding: 80px;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .container.trust {
+    padding: 120px;
+  }
+}
