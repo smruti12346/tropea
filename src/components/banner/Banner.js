@@ -95,6 +95,10 @@ function Banner() {
                                                         <Link
                                                           className="cta__button component__button--1"
                                                           to="appointment-request"
+                                                          style={{
+                                                            display:
+                                                              "inline-block",
+                                                          }}
                                                         >
                                                           Request Appointment
                                                         </Link>
