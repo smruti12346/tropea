@@ -422,9 +422,9 @@ input:not([type="submit"]),
 textarea {
   width: 100%;
 }
-
-
-
+.para-section {
+  color: #181818 !important;
+}
 
 .bg-overlay {
   position: relative;
