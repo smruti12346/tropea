@@ -55,6 +55,10 @@ const pages = [
         slug: "chiropractic-care-near-me",
       },
       {
+        name: "Therapeutic Massage",
+        slug: "therapeutic-massage",
+      },
+      {
         name: "Common Airbag and Seatbelt Injury",
         slug: "common-airbag-and-seatbelt-injuries",
       },
