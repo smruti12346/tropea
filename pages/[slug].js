@@ -28,26 +28,26 @@ const Slug = (props) => {
   return (
     <>
       <Head>
-        <title>Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA</title>
+        <title>{`${props.data?.yoast_head_json?.og_title}`}</title>
         <meta
           property="title"
-          content={`"${props.data?.yoast_head_json?.og_title}"`}
+          content={`${props.data?.yoast_head_json?.og_title}`}
         />
         <meta
           property="og:title"
-          content={`"${props.data?.yoast_head_json?.og_title}"`}
+          content={`${props.data?.yoast_head_json?.og_title}`}
         />
         <meta
           name="description"
-          content={`"${props.data?.yoast_head_json?.og_description}"`}
+          content={`${props.data?.yoast_head_json?.og_description}`}
         />
         <meta
           name="og:description"
-          content={`"${props.data?.yoast_head_json?.og_description}"`}
+          content={`${props.data?.yoast_head_json?.og_description}`}
         />
         <meta
           name="keywords"
-          content={`"${props.data?.acf?.keyword}"`}
+          content={`${props.data?.acf?.keyword}`}
         />
         <meta
           property="og:type"
@@ -183,7 +183,7 @@ export async function getStaticPaths() {
     params: { slug: `${item.slug}` },
   }));
   // const paths = [{params: {slug: ''}}]
-  return { paths: paths, fallback: true };
+  return { paths: paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
