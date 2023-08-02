@@ -405,28 +405,28 @@ const Header = (props) => {
             ×
           </span>
           <h2 className="covid-heading text-danger">
-            {/* New Patient Special!  */}
-            Celebrate with us!
+            New Patient Special!
+            {/* Celebrate with us! */}
           </h2>
           <p className="covid-content"></p>
           <p
             className="covid-headin"
             style={{ color: "#4a4a4a", fontWeight: "bold" }}
           >
-            {/* $50 Spinal Decompression Consultation */}
-            Dr. Tropea is celebrating his 27th year in practice. We want to
+            $50 Spinal Decompression Consultation
+            {/* Dr. Tropea is celebrating his 27th year in practice. We want to
             celebrate by offering all new patients an initial visit (exam and
             treatment) for $27. This promotion is valid from July 3rd through
-            July 31st, 2023.
+            July 31st, 2023. */}
             <br />
-            {/* Special Offer ($200 Normally){" "} */}
+            Special Offer ($200 Normally){" "}
           </p>
           <p className="para-section">
-            {/* We offer personalized natural care through advanced treatments that
-            decrease discomfort and increase cushioning and vitality. */}
-            This is the perfect time to have your friends and loved ones try out
+            We offer personalized natural care through advanced treatments that
+            decrease discomfort and increase cushioning and vitality.
+            {/* This is the perfect time to have your friends and loved ones try out
             chiropractic adjustments. Have them bring a screenshot of this
-            picture to receive the promotional price.
+            picture to receive the promotional price. */}
           </p>
           <p className="para-section">
             Call{" "}
