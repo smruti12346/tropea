@@ -180,15 +180,21 @@ function Content() {
           <div className="row">
             <div className="col-md-12">
               <p>
-                Imagine a natural healing experience with chiropractic massages
-                Sunnyvale. No medicines or surgeries, just hands-on expertise.
-                Skilled chiropractors gently fix muscle and joint issues, making
-                you feel better. They even help your body's healing powers.
+                Imagine a natural healing experience with{" "}
+                <Link href="/therapeutic-massage">
+                  chiropractic massages Sunnyvale
+                </Link>
+                . No medicines or surgeries, just hands-on expertise. Skilled
+                chiropractors gently fix muscle and joint issues, making you
+                feel better. They even help your body's healing powers.
               </p>
               <p>
                 Forget about side effects – this is all about working with your
-                body, not against it. Get an appointment for chiropractic
-                massages Sunnyvale today!
+                body, not against it. Get an appointment for{" "}
+                <Link href="/therapeutic-massage">
+                  chiropractic massages Sunnyvale
+                </Link>{" "}
+                today!
               </p>
             </div>
           </div>
