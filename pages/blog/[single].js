@@ -52,38 +52,30 @@ const Single = (props) => {
         ""
       )}
       <Head>
-        <title>{data?.yoast_head_json?.title}</title>
+        <title>{`${props.data?.yoast_head_json?.og_title}`}</title>
         <meta
-          name="description"
-          content={data?.yoast_head_json?.og_description}
-        />
-        <meta
-          name="keywords"
-          content="chiropractor"
-        />
-        <meta
-          name="SiteID"
-          content="0076741"
+          property="title"
+          content={`${props.data?.yoast_head_json?.og_title}`}
         />
         <meta
           property="og:title"
-          content="Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA"
+          content={`${props.data?.yoast_head_json?.og_title}`}
+        />
+        <meta
+          name="description"
+          content={`${props.data?.yoast_head_json?.og_description}`}
+        />
+        <meta
+          name="og:description"
+          content={`${props.data?.yoast_head_json?.og_description}`}
+        />
+        <meta
+          name="keywords"
+          content={`${props.data?.acf?.keyword}`}
         />
         <meta
           property="og:type"
           content="website"
-        />
-        <meta
-          property="og:description"
-          content="Our chiropractor at Tropea Chiropractic Inc is dedicated to helping Sunnyvale, CA, residents achieve their health and wellness goals. Call (408) 329-9604 today!"
-        />
-        <meta
-          property="og:url"
-          content="https://www.tonytropeadc.com"
-        />
-        <meta
-          property="og:image"
-          content="https://cdcssl.ibsrv.net/ibimg/smb/200x200_80/webmgr/1n/7/p/61f456f6b11f6_blade_20230124_1537.jpg.webp"
         />
       </Head>
       <div className="fullwidth-layout">

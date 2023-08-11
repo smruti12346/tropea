@@ -715,7 +715,7 @@ const Header = (props) => {
                                         }
                                       >
                                         <Link
-                                          href={childItem.slug}
+                                          href={`/${childItem.slug}`}
                                           className="navigation__item--link"
                                         >
                                           {childItem.name}
@@ -731,7 +731,7 @@ const Header = (props) => {
                                                     key={index}
                                                   >
                                                     <Link
-                                                      href={subchild.slug}
+                                                      href={`/${subchild.slug}`}
                                                       className="navigation__item--link"
                                                     >
                                                       {subchild.name}
