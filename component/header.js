@@ -38,7 +38,7 @@ const pages = [
   {
     name: "Chiropractic Services",
     id: "16",
-    slug: "chiropractic-care-near-me",
+    slug: "#",
     child: [
       {
         name: "BACK PAIN",

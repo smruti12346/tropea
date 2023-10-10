@@ -17,8 +17,7 @@ export default function Home() {
         <title>Tropea Chiropractic Inc | Chiropractor in Sunnyvale, CA</title>
         <meta
           name="description"
-          content="Looking for a trusted chiropractic doctor near you? Tropea Chiropractic
-offers noninvasive pain relief and personalized care. Schedule your consultation today!"
+          content="Are you dealing with severe back pain, neck pain, knee pain, concussions, or other post-accident symptoms? Get relief with chiropractic treatment."
         />
         <meta
           name="keywords"
@@ -30,7 +29,7 @@ offers noninvasive pain relief and personalized care. Schedule your consultation
         />
         <meta
           property="og:title"
-          content="Trusted Chiropractic Doctor Near Me | Tropea Chiropractic"
+          content="Chiropractic Care For Pain Management| Tropea Chiropractic Inc"
         />
         <meta
           property="og:type"

@@ -229,6 +229,5 @@ export async function getStaticProps({ params }) {
   //let url = router.query.slug;
   const res = await fetch(`${api_url}/posts?slug=${params.single}&_embed`);
   const data = await res.json();
-
   return { props: { data: data[0] } };
 }
