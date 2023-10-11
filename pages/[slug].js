@@ -14,7 +14,7 @@ const Slug = (props) => {
   useEffect(() => {
     let fetchData = props.data;
     if (!props.data.id) {
-      navigate.push("/404");
+      navigate.push("/");
     }
     console.log(fetchData);
     setTitle(fetchData.title.rendered);
