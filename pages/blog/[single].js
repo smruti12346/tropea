@@ -142,6 +142,9 @@ const Single = (props) => {
                                 data-component-name="editable"
                                 data-component-alias="editable"
                               >
+                                <h1 className="my-4">
+                                  {props.data.title.rendered}
+                                </h1>
                                 {props.data._embedded["wp:featuredmedia"][0]
                                   .source_url !== "" ? (
                                   <picture>

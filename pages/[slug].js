@@ -191,6 +191,7 @@ export async function getStaticProps({ params }) {
   const res = await fetch(
     `https://api.tonytropeadc.com/wp-json/wp/v2/pages?slug=${params.slug}`
   );
+
   const data = await res.json();
 
   return { props: { data: data[0] } };

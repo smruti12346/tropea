@@ -3,6 +3,7 @@ import { api_url } from "@/Auth";
 import { Box } from "@mui/material";
 import LinearProgress from "@mui/material/LinearProgress";
 import Link from "next/link";
+import Image from "next/image";
 const Blog = (props) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -95,15 +96,35 @@ const Blog = (props) => {
                                 <div className="row mb-4">
                                   {props.data?.map((item) => (
                                     <>
-                                      {console.log(item)}
-                                      <div className="col-md-4">
+                                      <div className="col-md-4 mb-3">
                                         <div className="card">
                                           <div className="card-body">
-                                            {/* <img className="img-fluid" /> */}
-
+                                            <Image
+                                              width={400}
+                                              height={400}
+                                              alt={item.title.rendered}
+                                              className="img-fluid"
+                                              src={
+                                                item._embedded[
+                                                  "wp:featuredmedia"
+                                                ][0].source_url
+                                              }
+                                            />
+                                            <h1
+                                              className="card-title text-center mt-2"
+                                              style={{
+                                                fontSize: "1.5rem",
+                                                lineHeight: "30px",
+                                              }}
+                                            >
+                                              {item.title.rendered}
+                                            </h1>
                                             <div
                                               dangerouslySetInnerHTML={{
-                                                __html: item.excerpt.rendered,
+                                                __html: `${item.excerpt.rendered.substring(
+                                                  0,
+                                                  150
+                                                )}...`,
                                               }}
                                               style={{ marginBottom: "30px" }}
                                             ></div>
@@ -142,7 +163,9 @@ export default Blog;
 
 export async function getStaticProps() {
   //let url = router.query.slug;
-  const res = await fetch(`https://api.tonytropeadc.com/wp-json/wp/v2/posts`);
+  const res = await fetch(
+    `https://api.tonytropeadc.com/wp-json/wp/v2/posts?_embed`
+  );
   const data = await res.json();
   return { props: { data: data } };
 }
