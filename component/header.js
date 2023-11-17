@@ -689,12 +689,22 @@ const Header = (props) => {
                               onMouseLeave={handleClose}
                               key={index}
                             >
-                              <Link
-                                href={`${item.slug}`}
-                                className="navigation__item--link"
-                              >
-                                {item.name}
-                              </Link>
+                              {item.name === "Blog" ? (
+                                <a
+                                  href={`${item.slug}`}
+                                  className="navigation__item--link"
+                                >
+                                  {item.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  href={`${item.slug}`}
+                                  className="navigation__item--link"
+                                >
+                                  {item.name}
+                                </Link>
+                              )}
+
                               <ul className="navigation__list navigation__list--sub">
                                 {item.child ? (
                                   <>
