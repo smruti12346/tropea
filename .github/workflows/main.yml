@@ -3,6 +3,8 @@ on:
     branches: [ production ]
   pull_request:
     branches: [ production ]
+  repository_dispatch:
+    types: [post_create]  
       
 name: 🚀 Deploy website on push
 jobs:
