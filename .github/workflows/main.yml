@@ -19,7 +19,7 @@ jobs:
         node-version: '18.x'
         
     - run: |
-        npm ci
+        npm install
         npm run build    
         
     - name: 📂 Sync files
