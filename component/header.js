@@ -23,7 +23,7 @@ const pages = [
   {
     name: "About Us",
     id: 16,
-    slug: "about-us",
+    slug: "/about-us",
     child: [
       {
         name: "MEET THE DOCTOR",
@@ -164,7 +164,7 @@ const pages = [
   {
     name: "Auto Accident Treatment",
     id: 16,
-    slug: "auto-accident-treatment",
+    slug: "/auto-accident-treatment",
     child: [
       {
         name: "Auto Accident FAQs",
@@ -175,7 +175,7 @@ const pages = [
   {
     name: "New Patient Center",
     id: 16,
-    slug: "new-patient-center",
+    slug: "/new-patient-center",
     child: [
       {
         name: "Special Offers",
@@ -217,7 +217,7 @@ const pages = [
   {
     name: "Resources",
     id: 16,
-    slug: "resources",
+    slug: "/resources",
     child: [
       {
         name: "3D Spine Simulator",
@@ -228,7 +228,7 @@ const pages = [
   {
     name: "Contact",
     id: 16,
-    slug: "contact",
+    slug: "/contact",
     child: [
       {
         name: "Appointment Request",
@@ -239,7 +239,7 @@ const pages = [
   {
     name: "Blog",
     id: 16,
-    slug: "blog",
+    slug: "https://www.tonytropeadc.com/blog",
   },
 ];
 
@@ -690,7 +690,7 @@ const Header = (props) => {
                               key={index}
                             >
                               <Link
-                                href={`/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="navigation__item--link"
                               >
                                 {item.name}
