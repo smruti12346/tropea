@@ -3,6 +3,7 @@ on:
     branches: [ production ]
   pull_request:
     branches: [ production ]
+  workflow_dispatch:  
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -11,7 +12,16 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-   
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '18.x'
+        
+    - run: |
+        npm ci
+        npm run build    
+        
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
