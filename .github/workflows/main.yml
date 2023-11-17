@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [ production ]
   workflow_dispatch:  
+  repository_dispatch:
+    types:
+      - webhook
+      
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
