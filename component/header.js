@@ -164,7 +164,7 @@ const pages = [
   {
     name: "Auto Accident Treatment",
     id: 16,
-    slug: "/auto-accident-treatment",
+    slug: "/car-accident-chiropractic-near-me",
     child: [
       {
         name: "Auto Accident FAQs",
