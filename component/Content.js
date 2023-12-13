@@ -134,7 +134,7 @@ function Content() {
                   <p>
                     The number of sessions required will depend on your specific
                     condition, symptoms' severity and your response to a
-                    particular therapy. Chiropractic doctor near me will
+                    particular therapy. Chiropractic doctors near me will
                     evaluate your progress regularly and create the treatment
                     plan as needed.
                   </p>
