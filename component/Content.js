@@ -21,7 +21,7 @@ function Content() {
               <div className="who-are-we">
                 <h2 className="subtitle">Who Are We?</h2>
                 <p>
-                  Dr. Tropea, the best chiropractic doctor near me, offers
+                  Dr. Tropea, the best chiropractic doctors near me, offers
                   noninvasive, natural pain relief without the use of medicines
                   or the risks associated with intrusive treatments. He
                   appreciates building one-on-one connections with his patients
