@@ -149,7 +149,7 @@ function Content() {
                   </li>
                   <p>
                     Absolutely! It helps people who have suffered injuries or
-                    trauma in car accidents. Chiropractic doctor near me has
+                    trauma in car accidents. Chiropractic doctors near me has
                     expertise in treating car accident-related injuries like
                     whiplash and can help you recover and regain mobility
                   </p>
