@@ -76,7 +76,7 @@ const pages = [
       },
       {
         name: "Herniated Discs",
-        slug: "herniated",
+        slug: "herniatedherniated-disc-chiropractic",
       },
       {
         name: "Headaches",
