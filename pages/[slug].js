@@ -12,6 +12,9 @@ const Slug = (props) => {
   const [keyWord, setKeyWord] = useState("");
   const navigate = useRouter();
   useEffect(() => {
+    if (props.data.slug == "herniated") {
+      navigate.push("/herniated-disc-chiropractic");
+    }
     let fetchData = props.data;
     if (!props.data.id) {
       navigate.push("/");
