@@ -76,7 +76,7 @@ const pages = [
       },
       {
         name: "Herniated Discs",
-        slug: "herniatedherniated-disc-chiropractic",
+        slug: "herniated-disc-chiropractic",
       },
       {
         name: "Headaches",
@@ -405,28 +405,24 @@ const Header = (props) => {
             ×
           </span>
           <h2 className="covid-heading text-danger">
-            New Patient Special!
-            {/* Celebrate with us! */}
+            {/* New Patient Special! */}
+            $24 New Patient Special
           </h2>
           <p className="covid-content"></p>
           <p
             className="covid-headin"
             style={{ color: "#4a4a4a", fontWeight: "bold" }}
           >
-            $50 Spinal Decompression Consultation
-            {/* Dr. Tropea is celebrating his 27th year in practice. We want to
-            celebrate by offering all new patients an initial visit (exam and
-            treatment) for $27. This promotion is valid from July 3rd through
-            July 31st, 2023. */}
+            Receive an exam and treatment for $24 for the month of January to
+            celebrate 2024! Offer applies to first appointment only. New
+            patients only.
+            {/* $50 Spinal Decompression Consultation
             <br />
-            Special Offer ($200 Normally){" "}
+            Special Offer ($200 Normally){" "} */}
           </p>
           <p className="para-section">
-            We offer personalized natural care through advanced treatments that
-            decrease discomfort and increase cushioning and vitality.
-            {/* This is the perfect time to have your friends and loved ones try out
-            chiropractic adjustments. Have them bring a screenshot of this
-            picture to receive the promotional price. */}
+            {/* We offer personalized natural care through advanced treatments that
+            decrease discomfort and increase cushioning and vitality. */}
           </p>
           <p className="para-section">
             Call{" "}
@@ -452,6 +448,58 @@ const Header = (props) => {
               />
             </p>
           </a>
+          <p style={{ color: "#4a4a4a", fontWeight: "bold", fontSize: "18px" }}>
+            If you have any of the following symptoms, our treatments can help
+            you:
+          </p>
+          <ul>
+            <li
+              style={{
+                textAlign: "left",
+                color: "#4a4a4a",
+                fontWeight: "bold",
+              }}
+            >
+              Numbness and Tingling throughout the body
+            </li>
+            <li
+              style={{
+                textAlign: "left",
+                color: "#4a4a4a",
+                fontWeight: "bold",
+              }}
+            >
+              Sciatica
+            </li>
+            <li
+              style={{
+                textAlign: "left",
+                color: "#4a4a4a",
+                fontWeight: "bold",
+              }}
+            >
+              Bulging Disc
+            </li>
+            <li
+              style={{
+                textAlign: "left",
+                color: "#4a4a4a",
+                fontWeight: "bold",
+              }}
+            >
+              Neck & low back pain
+            </li>
+          </ul>
+          <p style={{ color: "#4a4a4a", fontWeight: "bold" }}>
+            For more information about this treatment see
+            <a
+              href="https://www.tonytropeadc.com/spinal-decompression"
+              className="piwik_ignore"
+            >
+              {" "}
+              https://www.tonytropeadc.com/spinal-decompression
+            </a>
+          </p>
           <div>
             <a
               href="tel:4083299604"
