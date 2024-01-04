@@ -257,7 +257,7 @@ body #COVID19 .covid-close-link:hover {
 @media (min-width: 768px) {
   .covid-modal {
     width: 600px;
-    padding: 50px;
+    padding: 30px;
     margin: auto;
     top: 50%;
     transform: translateY(-50%);

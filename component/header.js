@@ -448,7 +448,7 @@ const Header = (props) => {
               />
             </p>
           </a>
-          <p style={{ color: "#4a4a4a", fontWeight: "bold", fontSize: "18px" }}>
+          <p style={{ color: "#4a4a4a", fontWeight: "bold" }}>
             If you have any of the following symptoms, our treatments can help
             you:
           </p>
@@ -457,7 +457,7 @@ const Header = (props) => {
               style={{
                 textAlign: "left",
                 color: "#4a4a4a",
-                fontWeight: "bold",
+                fontSize: "15px",
               }}
             >
               Numbness and Tingling throughout the body
@@ -466,7 +466,7 @@ const Header = (props) => {
               style={{
                 textAlign: "left",
                 color: "#4a4a4a",
-                fontWeight: "bold",
+                fontSize: "15px",
               }}
             >
               Sciatica
@@ -475,7 +475,7 @@ const Header = (props) => {
               style={{
                 textAlign: "left",
                 color: "#4a4a4a",
-                fontWeight: "bold",
+                fontSize: "15px",
               }}
             >
               Bulging Disc
@@ -484,7 +484,7 @@ const Header = (props) => {
               style={{
                 textAlign: "left",
                 color: "#4a4a4a",
-                fontWeight: "bold",
+                fontSize: "15px",
               }}
             >
               Neck & low back pain
@@ -506,14 +506,14 @@ const Header = (props) => {
               className="piwik_ignore"
             ></a>
           </div>
-          <div>
+          {/* <div>
             <a
               className="covid-close-link"
               onClick={closeModalCOVID19}
             >
               Close
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
       {isLoading ? (
