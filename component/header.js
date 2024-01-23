@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -338,37 +341,73 @@ const Header = (props) => {
   //     console.log(obj_data);
   //   });
   // }, []);
+  const handleMenuClick = (index) => {
+    const updatedPages = [...pages];
+    updatedPages[index].open = !updatedPages[index].open;
+    setMenu(updatedPages);
+  };
 
   const list = (anchor) => (
     <Box
       sx={{ width: "300px" === "top" || anchor === "bottom" ? "auto" : 200 }}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
       style={{ width: "300px" }}
     >
-      <List>
-        {pages.map((text, index) => (
-          <ListItem
-            key={text}
-            disablePadding
-          >
-            <ListItemButton>
-              <ListItemIcon>
-                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              </ListItemIcon>
-              <Link
-                href={text.slug}
-                onClick={handleMenuClose}
+    <List>
+    {pages.map((page, index) => (
+      <React.Fragment key={index}>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => handleMenuClick(index)}>
+            <ListItemIcon>{/* Your icon here */}</ListItemIcon>
+            <ListItemText primary={page.name} style={{ color: "black" }} />
+            {page.child && (
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="dropdown"
+                onClick={(event) => handleMenuClick(index)}
               >
-                <ListItemText
-                  primary={text.name}
-                  style={{ color: "black" }}
-                />
-              </Link>
-            </ListItemButton>
+               {page.open ? (
+                    <ExpandLess style={{ color: "black" }} />
+                  ) : (
+                    <ExpandMore style={{ color: "black" }} />
+                  )}
+              </IconButton>
+            )}
+          </ListItemButton>
+        </ListItem>
+          {page.child && page.open && (
+            <List component="div" disablePadding>
+              {page.child.map((childPage, childIndex) => (
+                  <React.Fragment key={childIndex}>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon>{/* Your icon here */}</ListItemIcon>
+                        <Link href={`/${childPage.slug}`} onClick={handleMenuClose}>
+                          <ListItemText primary={childPage.name} style={{ color: "black" }} />
+                        </Link>
+                      </ListItemButton>
+                    </ListItem>
+                    {childPage.child && (
+                      <List component="div" disablePadding className="sub-menu">
+                        {childPage.child.map((subChildPage, subChildIndex) => (
+                          <ListItem key={subChildIndex} disablePadding>
+                            <ListItemButton>
+                              <ListItemIcon>{/* Your icon here */}</ListItemIcon>
+                              <Link href={`/${subChildPage.slug}`} onClick={handleMenuClose}>
+                                <ListItemText primary={subChildPage.name} style={{ color: "black" }} />
+                              </Link>
+                            </ListItemButton>
+                          </ListItem>
+                        ))}
+                      </List>
+                    )}
+                  </React.Fragment>
+                ))}
+              </List>
+            )}
             <Divider />
-          </ListItem>
+          </React.Fragment>
         ))}
       </List>
     </Box>
@@ -581,10 +620,10 @@ const Header = (props) => {
       </Box>
 
       <div>
-        {["left", "right", "top", "bottom"].map((anchor) => (
+      {["left"].map((anchor) => (
           <React.Fragment key={anchor}>
             <SwipeableDrawer
-              anchor={"left"}
+              anchor={anchor}
               open={menu}
               onClose={handleMenuClose}
               onOpen={handleMenuOpen}
@@ -621,7 +660,7 @@ const Header = (props) => {
         className="desktop"
         style={{
           maxHeight: "99999px",
-          opacity: 1,
+          opacity: 1, 
           zIndex: 103,
           top: "0px",
           width: "100%",
