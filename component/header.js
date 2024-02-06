@@ -405,33 +405,24 @@ const Header = (props) => {
             ×
           </span>
           <h2 className="covid-heading text-danger">
-            {/* New Patient Special! */}
-            $24 New Patient Special
+            New Patient Special!
+            {/*$24 New Patient Special*/}
           </h2>
           <p className="covid-content"></p>
           <p
             className="covid-headin"
             style={{ color: "#4a4a4a", fontWeight: "bold" }}
           >
-            Receive an exam and treatment for $24 for the month of January to
+            {/*Receive an exam and treatment for $24 for the month of January to
             celebrate 2024! Offer applies to first appointment only. New
-            patients only.
-            {/* $50 Spinal Decompression Consultation
+            patients only.*/}
+            $50 Spinal Decompression Consultation
             <br />
-            Special Offer ($200 Normally){" "} */}
+            Special Offer ($200 Normally){" "}
           </p>
           <p className="para-section">
-            {/* We offer personalized natural care through advanced treatments that
-            decrease discomfort and increase cushioning and vitality. */}
-          </p>
-          <p className="para-section">
-            Call{" "}
-            <a
-              href="tel:4083299604"
-              className="piwik_ignore"
-            >
-              (408) 329-9604
-            </a>
+            We offer personalized natural care through advanced treatments that
+            decrease discomfort and increase cushioning and vitality.
           </p>
           <a
             href="tel:4083299604"
@@ -448,56 +439,13 @@ const Header = (props) => {
               />
             </p>
           </a>
-          <p style={{ color: "#4a4a4a", fontWeight: "bold" }}>
-            If you have any of the following symptoms, our treatments can help
-            you:
-          </p>
-          <ul>
-            <li
-              style={{
-                textAlign: "left",
-                color: "#4a4a4a",
-                fontSize: "15px",
-              }}
-            >
-              Numbness and Tingling throughout the body
-            </li>
-            <li
-              style={{
-                textAlign: "left",
-                color: "#4a4a4a",
-                fontSize: "15px",
-              }}
-            >
-              Sciatica
-            </li>
-            <li
-              style={{
-                textAlign: "left",
-                color: "#4a4a4a",
-                fontSize: "15px",
-              }}
-            >
-              Bulging Disc
-            </li>
-            <li
-              style={{
-                textAlign: "left",
-                color: "#4a4a4a",
-                fontSize: "15px",
-              }}
-            >
-              Neck & low back pain
-            </li>
-          </ul>
-          <p style={{ color: "#4a4a4a", fontWeight: "bold" }}>
-            For more information about this treatment see
+          <p className="para-section">
+            Call{" "}
             <a
-              href="https://www.tonytropeadc.com/spinal-decompression"
+              href="tel:4083299604"
               className="piwik_ignore"
             >
-              {" "}
-              https://www.tonytropeadc.com/spinal-decompression
+              (408) 329-9604
             </a>
           </p>
           <div>
@@ -505,15 +453,15 @@ const Header = (props) => {
               href="tel:4083299604"
               className="piwik_ignore"
             ></a>
-          </div>
-          {/* <div>
+          </div>{" "}
+          <div>
             <a
               className="covid-close-link"
               onClick={closeModalCOVID19}
             >
-              Close
+              Learn More
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
       {isLoading ? (
